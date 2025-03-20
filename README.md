@@ -17,6 +17,6 @@ Cette application est entièrement codé sous le langage Java avec des biblioth�
 
 ## Aperçu
 
-![Aperçu de l'app Vélib](img/overview.png)
+![Aperçu de l'app Vélib](img/image.png)
 
 _Représentation de l'application Vélib_
