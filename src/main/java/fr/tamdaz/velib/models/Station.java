@@ -81,6 +81,7 @@ public class Station {
 
     /**
      * Passer le nom et le code de la station en paramètre.
+     * 
      * @param name
      * @param stationCode
      */
@@ -91,6 +92,7 @@ public class Station {
 
     /**
      * Récupérer le nom de la station.
+     * 
      * @return
      */
     public String getName() {
@@ -99,6 +101,7 @@ public class Station {
 
     /**
      * Récupérer le numéro de la station.
+     * 
      * @return
      */
     public String getStationCode() {
@@ -107,6 +110,7 @@ public class Station {
 
     /**
      * Retourne le statut de la station.
+     * 
      * @return
      */
     public String getIsInstalled() {
@@ -119,6 +123,7 @@ public class Station {
 
     /**
      * Définir le statut de la station.
+     * 
      * @param isInstalled
      */
     public void setIsInstalled(boolean isInstalled) {
@@ -127,6 +132,7 @@ public class Station {
 
     /**
      * Retourne le nombre alloué de vélos.
+     * 
      * @return
      */
     public int getCapacity() {
@@ -135,6 +141,7 @@ public class Station {
 
     /**
      * Définir le nombre maximal de vélos disponibles.
+     * 
      * @param capacity
      */
     public void setCapacity(int capacity) {
@@ -143,6 +150,7 @@ public class Station {
 
     /**
      * Retourne le nombre de bornettes disponibles.
+     * 
      * @return
      */
     public int getNumberDocksAvailable() {
@@ -151,6 +159,7 @@ public class Station {
 
     /**
      * Définir le nombre de bornettes disponibles.
+     * 
      * @param numberDocksAvailable
      */
     public void setNumberDocksAvailable(int numberDocksAvailable) {
@@ -159,6 +168,7 @@ public class Station {
 
     /**
      * Retourne le nombre de vélos disponibles.
+     * 
      * @return
      */
     public int getNumberBikesAvailable() {
@@ -167,6 +177,7 @@ public class Station {
 
     /**
      * Définir le nombre de vélos disponibles.
+     * 
      * @param numberBikesAvailable
      */
     public void setNumberBikesAvailable(int numberBikesAvailable) {
@@ -175,6 +186,7 @@ public class Station {
 
     /**
      * Retourne le nombre de vélos mécaniques disponibles.
+     * 
      * @return
      */
     public int getMechanical() {
@@ -183,6 +195,7 @@ public class Station {
 
     /**
      * Définir le nombre de vélos mécaniques disponibles.
+     * 
      * @param mechanical
      */
     public void setMechanical(int mechanical) {
@@ -191,6 +204,7 @@ public class Station {
 
     /**
      * Retourne le nombre de vélos électriques disponibles.
+     * 
      * @return
      */
     public int getEbike() {
@@ -199,6 +213,7 @@ public class Station {
 
     /**
      * Définir le nombre de vélos électriques disponibles.
+     * 
      * @param ebike
      */
     public void setEbike(int ebike) {
@@ -207,6 +222,7 @@ public class Station {
 
     /**
      * Retourne le statut de la borne de paiement.
+     * 
      * @return
      */
     public String getIsRenting() {
@@ -219,6 +235,7 @@ public class Station {
 
     /**
      * Définir le statut de la borne de paiement.
+     * 
      * @param isRenting
      */
     public void setIsRenting(boolean isRenting) {
@@ -227,6 +244,7 @@ public class Station {
 
     /**
      * Retourne si la station peut recevoir des vélos.
+     * 
      * @return
      */
     public String getIsReturning() {
@@ -239,6 +257,7 @@ public class Station {
 
     /**
      * Définir la possibilité de recevoir des vélos.
+     * 
      * @param isReturning
      */
     public void setIsReturning(boolean isReturning) {
@@ -247,6 +266,7 @@ public class Station {
 
     /**
      * Retourne la date d'actualisation des données.
+     * 
      * @return
      */
     public Instant getDueDate() {
@@ -255,6 +275,7 @@ public class Station {
 
     /**
      * Définir la date d'actualisation des données.
+     * 
      * @param dueDate
      */
     public void setDueDate(Instant dueDate) {
@@ -263,6 +284,7 @@ public class Station {
 
     /**
      * Retourne les coordonnées de la station.
+     * 
      * @return
      */
     public Coordinates getCoordinates() {
@@ -271,6 +293,7 @@ public class Station {
 
     /**
      * Définir les coordonnées de la station.
+     * 
      * @param coordinates
      */
     public void setCoordinates(Coordinates coordinates) {
@@ -279,6 +302,7 @@ public class Station {
 
     /**
      * Retourne le nom de l'arrondissement.
+     * 
      * @return
      */
     public String getArrondissementName() {
@@ -287,6 +311,7 @@ public class Station {
 
     /**
      * Définir le nom de l'arrondissement.
+     * 
      * @param arrondissementName
      */
     public void setArrondissementName(String arrondissementName) {
@@ -295,6 +320,7 @@ public class Station {
 
     /**
      * Retourne le code INSEE de la commune.
+     * 
      * @return
      */
     public String getMunicipalityCodeInsee() {
@@ -303,6 +329,7 @@ public class Station {
 
     /**
      * Définir le code INSEE de la commune.
+     * 
      * @param municipalityCodeInsee
      */
     public void setMunicipalityCodeInsee(String municipalityCodeInsee) {
@@ -311,9 +338,10 @@ public class Station {
 
     /**
      * Effectuer un filtre de l'arrondissement.
+     * 
      * @param arrondissementName
      */
-    public void filtreArrondissement(String arrondissementName){
+    public void filtreArrondissement(String arrondissementName) {
         // ...
     }
 }

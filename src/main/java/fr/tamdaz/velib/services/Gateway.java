@@ -42,6 +42,7 @@ public class Gateway {
             station.setEbike(line.getInt("ebike"));
             station.setIsRenting(isRenting);
             station.setIsReturning(isReturning);
+            
             Instant instant = Instant.parse(line.getString("duedate"));
             station.setDueDate(instant);
 
