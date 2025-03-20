@@ -10,10 +10,10 @@ import java.nio.charset.StandardCharsets;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import fr.tamdaz.velib.models.Station;
-import fr.tamdaz.velib.models.collection.StationCollection;
 import fr.tamdaz.velib.App;
+import fr.tamdaz.velib.models.Station;
 import fr.tamdaz.velib.models.Coordinates;
+import fr.tamdaz.velib.models.collection.StationCollection;
 
 /**
  * Une passerelle qui permet de collecter et de traiter des informations
@@ -33,8 +33,7 @@ public class Gateway {
             boolean isRenting = line.getString("is_renting").equalsIgnoreCase("OUI");
             boolean isReturning = line.getString("is_returning").equalsIgnoreCase("OUI");
 
-            Station station = new Station(stationName);
-            station.setStationCode(stationCode);
+            Station station = new Station(stationName, stationCode);
             station.setIsInstalled(isInstalled);
             station.setCapacity(line.getInt("capacity"));
             station.setNumberDocksAvailable(line.getInt("numdocksavailable"));
