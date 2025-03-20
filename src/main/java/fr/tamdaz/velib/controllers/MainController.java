@@ -1,5 +1,8 @@
 package fr.tamdaz.velib.controllers;
 
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
 import fr.tamdaz.velib.models.Station;
 import fr.tamdaz.velib.models.collection.StationCollection;
 import javafx.collections.FXCollections;
@@ -139,5 +142,9 @@ public class MainController {
 
         this.arrondissementText.setText("Arrondissment : " + selectedStation.getArrondissementName());
         this.numMecanicBikesText.setText("Nombre de vélos mécaniques : " + selectedStation.getEbike());
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY à HH:mm:ss").withZone(ZoneId.systemDefault());
+
+        this.dueDateText.setText("Date d'actualisation des données : " + formatter.format(selectedStation.getDueDate()));
     }
 }
