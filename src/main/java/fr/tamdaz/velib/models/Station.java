@@ -109,8 +109,12 @@ public class Station {
      * Retourne le statut de la station.
      * @return
      */
-    public boolean getIsInstalled() {
-        return this.isInstalled.get();
+    public String getIsInstalled() {
+        if (this.isInstalled.get()) {
+            return "Oui";
+        } else {
+            return "Non";
+        }
     }
 
     /**
@@ -205,8 +209,12 @@ public class Station {
      * Retourne le statut de la borne de paiement.
      * @return
      */
-    public boolean getIsRenting() {
-        return this.isRenting.get();
+    public String getIsRenting() {
+        if (this.isRenting.get()) {
+            return "Oui";
+        } else {
+            return "Non";
+        }
     }
 
     /**
@@ -221,8 +229,12 @@ public class Station {
      * Retourne si la station peut recevoir des vélos.
      * @return
      */
-    public boolean getIsReturning() {
-        return this.isReturning;
+    public String getIsReturning() {
+        if (this.isReturning) {
+            return "Oui";
+        } else {
+            return "Non";
+        }
     }
 
     /**
