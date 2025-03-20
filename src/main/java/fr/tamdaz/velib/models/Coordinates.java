@@ -7,6 +7,12 @@ public class Coordinates {
     private final double longitude;
     private final double latitude;
 
+    /**
+     * Constructeur qui prend en paramètre la longitude et la lattitude.
+     * 
+     * @param longitude
+     * @param latitude
+     */
     public Coordinates(double longitude, double latitude) {
         this.longitude = longitude;
         this.latitude = latitude;
@@ -14,6 +20,7 @@ public class Coordinates {
 
     /**
      * Retourne la longitude.
+     * 
      * @return
      */
     public double getLongitude() {
@@ -22,6 +29,7 @@ public class Coordinates {
 
     /**
      * Retourne la lattitude.
+     * 
      * @return
      */
     public double getLatitude() {

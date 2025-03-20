@@ -42,17 +42,17 @@ public class Gateway {
             station.setEbike(line.getInt("ebike"));
             station.setIsRenting(isRenting);
             station.setIsReturning(isReturning);
-            
+
             Instant instant = Instant.parse(line.getString("duedate"));
             station.setDueDate(instant);
 
             JSONObject coordinatesObject = line.getJSONObject("coordonnees_geo");
 
-            Coordinates coordinates = new Coordinates(
-                coordinatesObject.getDouble("lon"),
-                coordinatesObject.getDouble("lat")
-            );
-            
+            double longitude = coordinatesObject.getDouble("lon");
+            double latitude = coordinatesObject.getDouble("lat");
+
+            Coordinates coordinates = new Coordinates(longitude, latitude);
+
             station.setCoordinates(coordinates);
             station.setArrondissementName(line.getString("nom_arrondissement_communes"));
             station.setMunicipalityCodeInsee(line.getString("code_insee_commune"));
@@ -63,13 +63,14 @@ public class Gateway {
 
     /**
      * Permet de lire le contenu du fichier dans une ressource.
+     * 
      * @param fileName Nom du fichier.
      * @return
      */
     private String getFileContent(String fileName) {
         InputStream inputStream = App.class.getResourceAsStream(fileName);
         String output = "";
-        
+
         if (inputStream != null) {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
             BufferedReader reader = new BufferedReader(inputStreamReader);

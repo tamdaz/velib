@@ -16,75 +16,137 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class MainController {
+    /**
+     * ID de la table de stations.
+     */
     @FXML
     private TableView<Station> dataTable;
 
+    /**
+     * Colonne pour afficher un ensemble de numéros de stations.
+     */
     @FXML
     private TableColumn<Station, String> numberColumn;
 
+    /**
+     * Colonne pour afficher un ensemble de noms de stations.
+     */
     @FXML
     private TableColumn<Station, String> nameColumn;
 
+    /**
+     * Colonne pour afficher un ensemble de stations disponibles.
+     */
     @FXML
     private TableColumn<Station, Boolean> isInstalledColumn;
 
+    /**
+     * Colonne pour afficher un ensemble de bornes de paiements disponibles.
+     */
     @FXML
     private TableColumn<Station, Boolean> isRentingColumn;
 
+    /**
+     * Une box verticale qui affiche toutes les informations sur une station.
+     */
     @FXML
     private VBox infoBox;
 
+    /**
+     * Texte pour afficher l'arrondissement.
+     */
     @FXML
     private Text arrondissementText;
 
+    /**
+     * Texte pour afficher le nombre de vélos alloués à la station.
+     */
     @FXML
     private Text capacityText;
 
+    /**
+     * Texte pour afficher si la station est disponible ou non.
+     */
     @FXML
     private Text isInstalledText;
 
+    /**
+     * Texte pour afficher si la borne de paiements est disponible ou non.
+     */
     @FXML
     private Text isRentingText;
 
+    /**
+     * Texte pour afficher si la station peut recevoir des vélos.
+     */
     @FXML
     private Text isReturningText;
 
+    /**
+     * Texte pour afficher le nom de la station.
+     */
     @FXML
     private Text nameText;
 
+    /**
+     * Texte pour afficher le nombre de vélos disponibles (mécaniques et
+     * électriques).
+     */
     @FXML
     private Text numBikesText;
 
+    /**
+     * Texte pour afficher le nombre de bornettes disponibles.
+     */
     @FXML
     private Text numDocksText;
 
+    /**
+     * Texte pour afficher le nombre de vélos électriques disponibles.
+     */
     @FXML
     private Text numEbikesText;
 
+    /**
+     * Texte pour afficher le nombre de vélos mécaniques disponibles.
+     */
     @FXML
     private Text numMecanicBikesText;
 
+    /**
+     * Texte pour afficher le numéro de la station.
+     */
     @FXML
     private Text stationCodeText;
 
+    /**
+     * Texte pour afficher le code INSEE.
+     */
     @FXML
     private Text inseeCodeText;
 
+    /**
+     * Texte pour afficher la date d'actualisation des données de la station.
+     */
     @FXML
     private Text dueDateText;
 
+    /**
+     * Texte pour afficher la lattitude.
+     */
     @FXML
     private Text latitudeText;
 
+    /**
+     * Texte pour afficher la longitude.
+     */
     @FXML
     private Text longitudeText;
 
     /**
      * Une liste de toutes stations.
      */
-    private final ObservableList<Station> data = FXCollections.observableArrayList(
-        StationCollection.getStations()
-    );
+    private final ObservableList<Station> data = FXCollections.observableArrayList(StationCollection.getStations());
 
     /**
      * Une fois que la vue et le controller se délenche.
@@ -92,8 +154,10 @@ public class MainController {
     @FXML
     public void initialize() {
         // Récupérer la valeur des attributs grâce à la clase PropertyValueFactory.
-        // Tant que certains attributs sont de type SimpleStringProperty, SimpleBooleanProperty
-        // ou SimpleIntegerProperty et que chaque attribut possèdent un getter et un setter,
+        // Tant que certains attributs sont de type SimpleStringProperty,
+        // SimpleBooleanProperty
+        // ou SimpleIntegerProperty et que chaque attribut possèdent un getter et un
+        // setter,
         // les données pourront être affichés sous forme de tableau.
         numberColumn.setCellValueFactory(new PropertyValueFactory<>("stationCode"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -112,12 +176,13 @@ public class MainController {
     public void onSelectedStation() {
         if (!this.dataTable.getSelectionModel().isEmpty()) {
             Station selectedStation = this.dataTable.getSelectionModel().getSelectedItem();
-            this.displayAdditionalInformation(selectedStation);    
+            this.displayAdditionalInformation(selectedStation);
         }
     }
 
     /**
      * Affiche des informations complémentaires sur la station sélectionnée.
+     * 
      * @param selectedStation
      */
     private void displayAdditionalInformation(Station selectedStation) {
@@ -158,9 +223,13 @@ public class MainController {
         this.arrondissementText.setText("Arrondissment : " + selectedStation.getArrondissementName());
         this.numMecanicBikesText.setText("Nombre de vélos mécaniques : " + selectedStation.getEbike());
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY à HH:mm:ss").withZone(ZoneId.systemDefault());
+        DateTimeFormatter formatter = DateTimeFormatter
+                .ofPattern("dd/MM/YYYY à HH:mm:ss")
+                .withZone(ZoneId.systemDefault());
 
-        this.dueDateText.setText("Date d'actualisation des données : " + formatter.format(selectedStation.getDueDate()));
+        String dueDateString = formatter.format(selectedStation.getDueDate());
+
+        this.dueDateText.setText("Date d'actualisation des données : " + dueDateString);
 
         String longitude = String.valueOf(selectedStation.getCoordinates().getLongitude());
         String latitude = String.valueOf(selectedStation.getCoordinates().getLatitude());
