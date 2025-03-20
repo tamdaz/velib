@@ -1,7 +1,6 @@
 package fr.tamdaz.velib;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 
 import fr.tamdaz.velib.services.Gateway;
 import javafx.stage.Stage;
@@ -16,7 +15,7 @@ import javafx.application.Application;
 public class App extends Application {
     private static Scene scene;
 
-    public static void main(String[] args) throws URISyntaxException, IOException {
+    public static void main(String[] args) throws IOException {
         new Gateway().start();
         launch();
     }
