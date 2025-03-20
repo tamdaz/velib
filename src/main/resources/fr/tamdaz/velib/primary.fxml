@@ -91,7 +91,7 @@
                   <RadioButton mnemonicParsing="false" text="93" toggleGroup="$MunicipalityGroup" GridPane.columnIndex="2" />
                   <RadioButton mnemonicParsing="false" text="94" toggleGroup="$MunicipalityGroup" GridPane.columnIndex="3" />
                   <RadioButton mnemonicParsing="false" text="95" toggleGroup="$MunicipalityGroup" GridPane.columnIndex="4" />
-                  <RadioButton mnemonicParsing="false" text="75" />
+                  <RadioButton mnemonicParsing="false" text="75" toggleGroup="$MunicipalityGroup" />
                </children>
             </GridPane>
          </content>
