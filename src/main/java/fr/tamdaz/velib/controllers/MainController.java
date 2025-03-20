@@ -12,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class MainController {
@@ -120,24 +121,30 @@ public class MainController {
         this.numDocksText.setText("Nombre de bornettes disponibles : " + selectedStation.getEbike());
         this.inseeCodeText.setText("Code INSEE : " + selectedStation.getMunicipalityCodeInsee());
 
-        if (selectedStation.getIsRenting() == true) {
-            this.isRentingText.setText("Statut de la borne de paiement : Disponible");
+        if (selectedStation.getIsRenting().equals("Oui")) {
+            this.isRentingText.setText("Borne de paiement : Disponible");
+            this.isRentingText.setFill(Color.GREEN);
         } else {
-            this.isRentingText.setText("Statut de la borne de paiement : Occupé");
+            this.isRentingText.setText("Borne de paiement : Occupé");
+            this.isRentingText.setFill(Color.RED);
         }
 
         this.numEbikesText.setText("Nombre de vélos électriques : " + selectedStation.getEbike());
 
-        if (selectedStation.getIsInstalled() == true) {
-            this.isInstalledText.setText("Statut de la station : Disponible");
+        if (selectedStation.getIsInstalled().equals("Oui")) {
+            this.isInstalledText.setText("Station : Disponible");
+            this.isInstalledText.setFill(Color.GREEN);
         } else {
-            this.isInstalledText.setText("Statut de la station : Occupée");
+            this.isInstalledText.setText("Station : Occupée");
+            this.isInstalledText.setFill(Color.RED);
         }
 
-        if (selectedStation.getIsReturning() == true) {
+        if (selectedStation.getIsReturning().equals("Oui")) {
             this.isReturningText.setText("Peut recevoir des vélos : Oui");
+            this.isReturningText.setFill(Color.GREEN);
         } else {
             this.isReturningText.setText("Peut recevoir des vélos : Non");
+            this.isReturningText.setFill(Color.RED);
         }
 
         this.arrondissementText.setText("Arrondissment : " + selectedStation.getArrondissementName());
