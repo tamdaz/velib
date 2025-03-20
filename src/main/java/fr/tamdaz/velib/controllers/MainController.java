@@ -110,8 +110,10 @@ public class MainController {
      */
     @FXML
     public void onSelectedStation() {
-        Station selectedStation = this.dataTable.getSelectionModel().getSelectedItem();
-        this.displayAdditionalInformation(selectedStation);
+        if (!this.dataTable.getSelectionModel().isEmpty()) {
+            Station selectedStation = this.dataTable.getSelectionModel().getSelectedItem();
+            this.displayAdditionalInformation(selectedStation);    
+        }
     }
 
     /**
