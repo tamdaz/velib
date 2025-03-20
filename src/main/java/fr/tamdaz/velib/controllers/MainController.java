@@ -73,6 +73,12 @@ public class MainController {
     @FXML
     private Text dueDateText;
 
+    @FXML
+    private Text latitudeText;
+
+    @FXML
+    private Text longitudeText;
+
     /**
      * Une liste de toutes stations.
      */
@@ -153,5 +159,11 @@ public class MainController {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY à HH:mm:ss").withZone(ZoneId.systemDefault());
 
         this.dueDateText.setText("Date d'actualisation des données : " + formatter.format(selectedStation.getDueDate()));
+
+        String longitude = String.valueOf(selectedStation.getCoordinates().getLongitude());
+        String latitude = String.valueOf(selectedStation.getCoordinates().getLatitude());
+
+        this.longitudeText.setText(longitude);
+        this.latitudeText.setText(latitude);
     }
 }
