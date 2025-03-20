@@ -117,7 +117,7 @@
          <content>
             <VBox fx:id="infoBox" spacing="6.0">
                <children>
-                  <Text fx:id="stationNumberText" strokeType="OUTSIDE" strokeWidth="0.0" text="Station n°----">
+                  <Text fx:id="stationCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Station n°----">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -148,7 +148,7 @@
                         <Text fx:id="inseeCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Code INSEE : " GridPane.columnIndex="2" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date d'actualisation des données  : ">
+                  <Text fx:id="dueDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Date d'actualisation des données  : ">
                      <font>
                         <Font name="System Italic" size="13.0" />
                      </font>
