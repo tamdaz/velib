@@ -190,4 +190,8 @@ public class Station {
     public void setMunicipalityCodeInsee(String municipalityCodeInsee) {
         this.municipalityCodeInsee = municipalityCodeInsee;
     }
+
+    public void filtreArrondissement(String arrondissementName){
+        
+    }
 }
