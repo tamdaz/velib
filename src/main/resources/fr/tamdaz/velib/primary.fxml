@@ -24,7 +24,7 @@
       <RowConstraints maxHeight="382.0000061035156" minHeight="252.39999999999998" prefHeight="358.8000244140625" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="Arrondissements">
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Arrondissements">
          <content>
             <GridPane alignment="CENTER">
                <columnConstraints>
@@ -69,7 +69,7 @@
             </GridPane>
          </content>
       </TitledPane>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="Départements (Hors-Paris)" GridPane.columnIndex="1">
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Départements (Hors-Paris)" GridPane.columnIndex="1">
          <content>
             <GridPane>
                <columnConstraints>
@@ -96,7 +96,7 @@
             </GridPane>
          </content>
       </TitledPane>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="Autres paramètres" GridPane.columnIndex="2">
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Autres paramètres" GridPane.columnIndex="2">
          <content>
             <RadioButton mnemonicParsing="false" text="Mobiles">
                <toggleGroup>
@@ -107,26 +107,22 @@
       </TitledPane>
       <TableView fx:id="dataTable" onKeyPressed="#onSelectedStation" onMouseClicked="#onSelectedStation" prefWidth="1000.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
          <columns>
-            <TableColumn fx:id="numberColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Numéro" />
-            <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Nom" />
-            <TableColumn fx:id="isRentingColumn" prefWidth="75.0" text="Borne de paiement" />
-            <TableColumn fx:id="isInstalledColumn" prefWidth="75.0" text="Disponible" />
+            <TableColumn fx:id="numberColumn" maxWidth="125.0" minWidth="100.0" prefWidth="125.0" text="Numéro" />
+            <TableColumn fx:id="nameColumn" maxWidth="3000.0" minWidth="100.0" prefWidth="500.0" text="Nom" />
+            <TableColumn fx:id="isRentingColumn" maxWidth="150.0" minWidth="100.0" prefWidth="150.0" text="Borne de paiement" />
+            <TableColumn fx:id="isInstalledColumn" maxWidth="150.0" minWidth="100.0" prefWidth="150.0" text="Disponible" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Informations" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="&gt; Informations" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
          <content>
             <VBox fx:id="infoBox" spacing="6.0">
                <children>
-                  <Text fx:id="stationCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Station n°----">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                  </Text>
                   <GridPane>
                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -136,19 +132,34 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom : " />
-                        <Text fx:id="isInstalledText" strokeType="OUTSIDE" strokeWidth="0.0" text="Statut de la station : " GridPane.rowIndex="1" />
-                        <Text fx:id="isRentingText" strokeType="OUTSIDE" strokeWidth="0.0" text="Statut de la borne de paiement : " GridPane.rowIndex="2" />
-                        <Text fx:id="capacityText" strokeType="OUTSIDE" strokeWidth="0.0" text="Capacité :" GridPane.rowIndex="3" />
-                        <Text fx:id="numDocksText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. bornettes disponibles : " GridPane.columnIndex="1" />
-                        <Text fx:id="numBikesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. vélos disponibles : " GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Text fx:id="numEbikesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. vélos électriques dispo. :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Text fx:id="numMecanicBikesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. vélos mécaniques dispo. :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text fx:id="isReturningText" strokeType="OUTSIDE" strokeWidth="0.0" text="Peut recevoir des vélos : " GridPane.columnIndex="2" />
-                        <Text fx:id="arrondissementText" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrondissement : " GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Text fx:id="inseeCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Code INSEE : " GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Text fx:id="nameText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom : " GridPane.rowIndex="1" />
+                        <Text fx:id="isInstalledText" strokeType="OUTSIDE" strokeWidth="0.0" text="Statut de la station : " GridPane.rowIndex="2" />
+                        <Text fx:id="isRentingText" strokeType="OUTSIDE" strokeWidth="0.0" text="Statut de la borne de paiement : " GridPane.rowIndex="3" />
+                        <Text fx:id="capacityText" strokeType="OUTSIDE" strokeWidth="0.0" text="Capacité :" GridPane.rowIndex="4" />
+                        <Text fx:id="numDocksText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. bornettes disponibles : " GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text fx:id="numBikesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. vélos disponibles : " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text fx:id="numEbikesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. vélos électriques dispo. :" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Text fx:id="numMecanicBikesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. vélos mécaniques dispo. :" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text fx:id="isReturningText" strokeType="OUTSIDE" strokeWidth="0.0" text="Peut recevoir des vélos :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Text fx:id="arrondissementText" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrondissement :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Text fx:id="inseeCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Code INSEE :" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Text fx:id="stationCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Station n°----" wrappingWidth="300.0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Coordonnées :" underline="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Text fx:id="longitudeText" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;&lt;&lt; Longitude &gt;&gt;&gt;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font></Text>
+                        <Text fx:id="latitudeText" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;&lt;&lt; Latitude &gt;&gt;&gt;" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Italic" size="13.0" />
+                           </font></Text>
                      </children>
                   </GridPane>
                   <Text fx:id="dueDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Date d'actualisation des données  : ">
