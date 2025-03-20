@@ -13,9 +13,6 @@ import javafx.scene.text.Text;
 
 public class MainController {
     @FXML
-    private VBox infoBox;
-
-    @FXML
     private TableView<Station> dataTable;
 
     @FXML
@@ -29,6 +26,9 @@ public class MainController {
 
     @FXML
     private TableColumn<Station, Boolean> isRentingColumn;
+
+    @FXML
+    private VBox infoBox;
 
     @FXML
     private Text arrondissementText;
@@ -66,12 +66,25 @@ public class MainController {
     @FXML
     private Text inseeCodeText;
 
+    @FXML
+    private Text dueDateText;
+
+    /**
+     * Une liste de toutes stations.
+     */
     private final ObservableList<Station> data = FXCollections.observableArrayList(
         StationCollection.getStations()
     );
 
+    /**
+     * Une fois que la vue et le controller se délenche.
+     */
     @FXML
     public void initialize() {
+        // Récupérer la valeur des attributs grâce à la clase PropertyValueFactory.
+        // Tant que certains attributs sont de type SimpleStringProperty, SimpleBooleanProperty
+        // ou SimpleIntegerProperty et que chaque attribut possèdent un getter et un setter,
+        // les données pourront être affichés sous forme de tableau.
         numberColumn.setCellValueFactory(new PropertyValueFactory<>("stationCode"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         isRentingColumn.setCellValueFactory(new PropertyValueFactory<>("isRenting"));
@@ -82,22 +95,49 @@ public class MainController {
         }
     }
 
+    /**
+     * Se déclenche lors de la sélection d'une ligne dans un tableau.
+     */
     @FXML
     public void onSelectedStation() {
         Station selectedStation = this.dataTable.getSelectionModel().getSelectedItem();
+        this.displayAdditionalInformation(selectedStation);
+    }
 
+    /**
+     * Affiche des informations complémentaires sur la station sélectionnée.
+     * @param selectedStation
+     */
+    private void displayAdditionalInformation(Station selectedStation) {
         this.stationCodeText.setText("Station n°" + selectedStation.getStationCode());
 
         this.nameText.setText("Nom : " + selectedStation.getName());
         this.capacityText.setText("Capacité : " + selectedStation.getCapacity());
         this.numBikesText.setText("Nombre de vélos disponibles : " + selectedStation.getNumberBikesAvailable());
         this.numDocksText.setText("Nombre de bornettes disponibles : " + selectedStation.getEbike());
-        this.inseeCodeText.setText(null);
-        this.isRentingText.setText(null);
-        this.numEbikesText.setText(null);
-        this.isInstalledText.setText(null);
-        this.isReturningText.setText(null);
-        this.arrondissementText.setText(null);
-        this.numMecanicBikesText.setText(null);
+        this.inseeCodeText.setText("Code INSEE : " + selectedStation.getMunicipalityCodeInsee());
+
+        if (selectedStation.getIsRenting() == true) {
+            this.isRentingText.setText("Statut de la borne de paiement : Disponible");
+        } else {
+            this.isRentingText.setText("Statut de la borne de paiement : Occupé");
+        }
+
+        this.numEbikesText.setText("Nombre de vélos électriques : " + selectedStation.getEbike());
+
+        if (selectedStation.getIsInstalled() == true) {
+            this.isInstalledText.setText("Statut de la station : Disponible");
+        } else {
+            this.isInstalledText.setText("Statut de la station : Occupée");
+        }
+
+        if (selectedStation.getIsReturning() == true) {
+            this.isReturningText.setText("Peut recevoir des vélos : Oui");
+        } else {
+            this.isReturningText.setText("Peut recevoir des vélos : Non");
+        }
+
+        this.arrondissementText.setText("Arrondissment : " + selectedStation.getArrondissementName());
+        this.numMecanicBikesText.setText("Nombre de vélos mécaniques : " + selectedStation.getEbike());
     }
 }
