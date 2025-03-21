@@ -35,11 +35,11 @@ public class Gateway {
 
             Station station = new Station(stationName, stationCode);
             station.setIsInstalled(isInstalled);
-            station.setCapacity(line.getInt("capacity"));
-            station.setNumberDocksAvailable(line.getInt("numdocksavailable"));
-            station.setNumberBikesAvailable(line.getInt("numbikesavailable"));
-            station.setMechanical(line.getInt("mechanical"));
-            station.setEbike(line.getInt("ebike"));
+            station.getBikesCapacity().setCapacity(line.getInt("capacity"));
+            station.getBikesCapacity().setNumberDocksAvailable(line.getInt("numdocksavailable"));
+            station.getBikesCapacity().setNumberBikesAvailable(line.getInt("numbikesavailable"));
+            station.getBikesCapacity().setMechanical(line.getInt("mechanical"));
+            station.getBikesCapacity().setEbike(line.getInt("ebike"));
             station.setIsRenting(isRenting);
             station.setIsReturning(isReturning);
 

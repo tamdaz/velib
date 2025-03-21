@@ -189,9 +189,9 @@ public class MainController {
         this.stationCodeText.setText("Station n°" + selectedStation.getStationCode());
 
         this.nameText.setText("Nom : " + selectedStation.getName());
-        this.capacityText.setText("Capacité : " + selectedStation.getCapacity());
-        this.numBikesText.setText("Nombre de vélos disponibles : " + selectedStation.getNumberBikesAvailable());
-        this.numDocksText.setText("Nombre de bornettes disponibles : " + selectedStation.getEbike());
+        this.capacityText.setText("Capacité : " + selectedStation.getBikesCapacity().getCapacity());
+        this.numBikesText.setText("Nombre de vélos disponibles : " + selectedStation.getBikesCapacity().getNumberBikesAvailable());
+        this.numDocksText.setText("Nombre de bornettes disponibles : " + selectedStation.getBikesCapacity().getEbike());
         this.inseeCodeText.setText("Code INSEE : " + selectedStation.getMunicipalityCodeInsee());
 
         if (selectedStation.getIsRenting().equals("Oui")) {
@@ -202,7 +202,7 @@ public class MainController {
             this.isRentingText.setFill(Color.RED);
         }
 
-        this.numEbikesText.setText("Nombre de vélos électriques : " + selectedStation.getEbike());
+        this.numEbikesText.setText("Nombre de vélos électriques : " + selectedStation.getBikesCapacity().getEbike());
 
         if (selectedStation.getIsInstalled().equals("Oui")) {
             this.isInstalledText.setText("Station : Disponible");
@@ -221,7 +221,7 @@ public class MainController {
         }
 
         this.arrondissementText.setText("Arrondissment : " + selectedStation.getArrondissementName());
-        this.numMecanicBikesText.setText("Nombre de vélos mécaniques : " + selectedStation.getEbike());
+        this.numMecanicBikesText.setText("Nombre de vélos mécaniques : " + selectedStation.getBikesCapacity().getEbike());
 
         DateTimeFormatter formatter = DateTimeFormatter
                 .ofPattern("dd/MM/YYYY à HH:mm:ss")
