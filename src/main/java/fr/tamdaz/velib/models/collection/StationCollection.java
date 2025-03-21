@@ -33,7 +33,7 @@ public class StationCollection {
     }
 
     /**
-     * Filtrer les stations par arrondissement
+     * Filtrer les stations par arrondissement.
      * 
      * @return
      */
@@ -44,22 +44,27 @@ public class StationCollection {
             if (station.getMunicipalityCodeInsee().startsWith("75")) {
                 if (station.getStationCode().length() == 5) {
                     String arrondissement = station.getStationCode().substring(0, 2);
-                    if (arrondissement == numArrondissement) {
+
+                    if (arrondissement.equals(numArrondissement)) {
                         filteredStation.add(station);
                     }
-                } else if (station.getStationCode().length() == 4) {
+                }
+                
+                if (station.getStationCode().length() == 4) {
                     String arrondissement = station.getStationCode().substring(0, 1);
-                    if (arrondissement == numArrondissement) {
+
+                    if (arrondissement.equals(numArrondissement)) {
                         filteredStation.add(station);
                     }
                 }
             }
         }
+
         return filteredStation;
     }
 
     /**
-     * Filtrer les stations par département
+     * Filtrer les stations par département.
      * 
      * @return
      */
@@ -71,6 +76,7 @@ public class StationCollection {
                 filteredStation.add(station);
             }
         }
+
         return filteredStation;
     }
 
