@@ -30,29 +30,9 @@ public class Station {
     private SimpleBooleanProperty isRenting;
 
     /**
-     * Nombre maximal de vélos alloués.
+     * Informations sur la capacité des vélos que peut avoir une station.
      */
-    private int capacity;
-
-    /**
-     * Nombre de bornettes disponibles.
-     */
-    private int numberDocksAvailable;
-
-    /**
-     * Nombre de vélos disponibles.
-     */
-    private int numberBikesAvailable;
-
-    /**
-     * Nombre de vélos éléctriques disponibles parmi tous les vélos.
-     */
-    private int ebike;
-
-    /**
-     * Nombre de vélos mécaniques disponibles parmi tous les vélos.
-     */
-    private int mechanical;
+    private BikesCapacity bikesCapacity;
 
     /**
      * Est-ce que la station peut recevoir des vélos ?
@@ -131,96 +111,6 @@ public class Station {
     }
 
     /**
-     * Retourne le nombre alloué de vélos.
-     * 
-     * @return
-     */
-    public int getCapacity() {
-        return this.capacity;
-    }
-
-    /**
-     * Définir le nombre maximal de vélos disponibles.
-     * 
-     * @param capacity
-     */
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
-    /**
-     * Retourne le nombre de bornettes disponibles.
-     * 
-     * @return
-     */
-    public int getNumberDocksAvailable() {
-        return this.numberDocksAvailable;
-    }
-
-    /**
-     * Définir le nombre de bornettes disponibles.
-     * 
-     * @param numberDocksAvailable
-     */
-    public void setNumberDocksAvailable(int numberDocksAvailable) {
-        this.numberDocksAvailable = numberDocksAvailable;
-    }
-
-    /**
-     * Retourne le nombre de vélos disponibles.
-     * 
-     * @return
-     */
-    public int getNumberBikesAvailable() {
-        return this.numberBikesAvailable;
-    }
-
-    /**
-     * Définir le nombre de vélos disponibles.
-     * 
-     * @param numberBikesAvailable
-     */
-    public void setNumberBikesAvailable(int numberBikesAvailable) {
-        this.numberBikesAvailable = numberBikesAvailable;
-    }
-
-    /**
-     * Retourne le nombre de vélos mécaniques disponibles.
-     * 
-     * @return
-     */
-    public int getMechanical() {
-        return this.mechanical;
-    }
-
-    /**
-     * Définir le nombre de vélos mécaniques disponibles.
-     * 
-     * @param mechanical
-     */
-    public void setMechanical(int mechanical) {
-        this.mechanical = mechanical;
-    }
-
-    /**
-     * Retourne le nombre de vélos électriques disponibles.
-     * 
-     * @return
-     */
-    public int getEbike() {
-        return this.ebike;
-    }
-
-    /**
-     * Définir le nombre de vélos électriques disponibles.
-     * 
-     * @param ebike
-     */
-    public void setEbike(int ebike) {
-        this.ebike = ebike;
-    }
-
-    /**
      * Retourne le statut de la borne de paiement.
      * 
      * @return
@@ -240,6 +130,26 @@ public class Station {
      */
     public void setIsRenting(boolean isRenting) {
         this.isRenting = new SimpleBooleanProperty(isRenting);
+    }
+
+    /**
+     * Retourne des informations sur la capacité des vélos que peut avoir une
+     * station.
+     * 
+     * @return
+     */
+    public BikesCapacity getBikesCapacity() {
+        return this.bikesCapacity;
+    }
+
+    /**
+     * Définir des informations sur la capacité des vélos que peut avoir une
+     * station.
+     * 
+     * @param bikesCapacity
+     */
+    public void setBikesCapacity(BikesCapacity bikesCapacity) {
+        this.bikesCapacity = bikesCapacity;
     }
 
     /**
