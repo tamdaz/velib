@@ -12,6 +12,7 @@ import org.json.JSONObject;
 
 import fr.tamdaz.velib.App;
 import fr.tamdaz.velib.models.Station;
+import fr.tamdaz.velib.models.BikesCapacity;
 import fr.tamdaz.velib.models.Coordinates;
 import fr.tamdaz.velib.models.collection.StationCollection;
 
@@ -35,11 +36,16 @@ public class Gateway {
 
             Station station = new Station(stationName, stationCode);
             station.setIsInstalled(isInstalled);
-            station.getBikesCapacity().setCapacity(line.getInt("capacity"));
-            station.getBikesCapacity().setNumberDocksAvailable(line.getInt("numdocksavailable"));
-            station.getBikesCapacity().setNumberBikesAvailable(line.getInt("numbikesavailable"));
-            station.getBikesCapacity().setMechanical(line.getInt("mechanical"));
-            station.getBikesCapacity().setEbike(line.getInt("ebike"));
+
+            BikesCapacity bikesCapacity = new BikesCapacity();
+
+            bikesCapacity.setCapacity(line.getInt("capacity"));
+            bikesCapacity.setEbike(line.getInt("ebike"));
+            bikesCapacity.setMechanical(line.getInt("mechanical"));
+            bikesCapacity.setNumberBikesAvailable(line.getInt("numbikesavailable"));
+            bikesCapacity.setNumberDocksAvailable(line.getInt("numdocksavailable"));
+
+            station.setBikesCapacity(bikesCapacity);
             station.setIsRenting(isRenting);
             station.setIsReturning(isReturning);
 
