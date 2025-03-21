@@ -28,11 +28,43 @@ public class Coordinates {
     }
 
     /**
+     * Retourne la longitude sous format degrés, minutes et secondes.
+     * 
+     * @return
+     */
+    public String getLitteralLongitude() {
+        int hours = (int) this.longitude;
+
+        double tmpMinutes = (this.longitude - hours) * 60;
+        int minutes = (int) tmpMinutes;
+
+        double seconds = (tmpMinutes - minutes) * 60;
+
+        return String.format("%d° %d' %.2f\"", hours, minutes, seconds);
+    }
+
+    /**
      * Retourne la lattitude.
      * 
      * @return
      */
     public double getLatitude() {
         return this.latitude;
+    }
+
+    /**
+     * Retourne la lattitude sous format degrés, minutes et secondes.
+     * 
+     * @return
+     */
+    public String getLitteralLattitude() {
+        int hours = (int) this.latitude;
+
+        double tmpMinutes = (this.latitude - hours) * 60;
+        int minutes = (int) tmpMinutes;
+
+        double seconds = (tmpMinutes - minutes) * 60;
+
+        return String.format("%d° %d' %.2f\"", hours, minutes, seconds);
     }
 }
