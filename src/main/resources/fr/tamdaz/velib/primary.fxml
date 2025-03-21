@@ -24,7 +24,7 @@
       <RowConstraints maxHeight="382.0000061035156" minHeight="252.39999999999998" prefHeight="358.8000244140625" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Arrondissements">
+      <TitledPane fx:id="arrondissementView" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Arrondissements">
          <content>
             <GridPane alignment="CENTER">
                <columnConstraints>
@@ -41,30 +41,30 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" text="1">
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="1">
                      <toggleGroup>
-                        <ToggleGroup fx:id="ArrondissementsGroup" />
+                        <ToggleGroup fx:id="arrondissementsGroup" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="2" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="1" />
-                  <RadioButton mnemonicParsing="false" text="3" textAlignment="CENTER" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="4" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="3" />
-                  <RadioButton mnemonicParsing="false" text="5" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="4" />
-                  <RadioButton mnemonicParsing="false" text="6" toggleGroup="$ArrondissementsGroup" GridPane.rowIndex="1" />
-                  <RadioButton mnemonicParsing="false" text="7" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <RadioButton mnemonicParsing="false" text="8" textAlignment="CENTER" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <RadioButton mnemonicParsing="false" text="9" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <RadioButton mnemonicParsing="false" text="10" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <RadioButton mnemonicParsing="false" text="11" toggleGroup="$ArrondissementsGroup" GridPane.rowIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="12" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="13" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="14" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="15" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="16" toggleGroup="$ArrondissementsGroup" GridPane.rowIndex="3" />
-                  <RadioButton mnemonicParsing="false" text="17" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <RadioButton mnemonicParsing="false" text="18" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <RadioButton mnemonicParsing="false" text="19" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <RadioButton mnemonicParsing="false" text="20" toggleGroup="$ArrondissementsGroup" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="2" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="1" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="3" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="2" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="4" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="3" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="5" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="4" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="6" toggleGroup="$arrondissementsGroup" GridPane.rowIndex="1" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="7" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="8" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="9" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="10" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="11" toggleGroup="$arrondissementsGroup" GridPane.rowIndex="2" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="12" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="13" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="14" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="15" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="16" toggleGroup="$arrondissementsGroup" GridPane.rowIndex="3" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="17" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="18" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="19" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedArrondissement" text="20" toggleGroup="$arrondissementsGroup" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                </children>
             </GridPane>
          </content>
@@ -83,15 +83,15 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <RadioButton mnemonicParsing="false" text="92" GridPane.columnIndex="1">
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedDepartment" text="92" GridPane.columnIndex="1">
                      <toggleGroup>
-                        <ToggleGroup fx:id="MunicipalityGroup" />
+                        <ToggleGroup fx:id="departmentGroup" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="93" toggleGroup="$MunicipalityGroup" GridPane.columnIndex="2" />
-                  <RadioButton mnemonicParsing="false" text="94" toggleGroup="$MunicipalityGroup" GridPane.columnIndex="3" />
-                  <RadioButton mnemonicParsing="false" text="95" toggleGroup="$MunicipalityGroup" GridPane.columnIndex="4" />
-                  <RadioButton mnemonicParsing="false" text="75" toggleGroup="$MunicipalityGroup" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedDepartment" text="93" toggleGroup="$departmentGroup" GridPane.columnIndex="2" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedDepartment" text="94" toggleGroup="$departmentGroup" GridPane.columnIndex="3" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedDepartment" text="95" toggleGroup="$departmentGroup" GridPane.columnIndex="4" />
+                  <RadioButton mnemonicParsing="false" onAction="#onSelectedDepartment" text="75" toggleGroup="$departmentGroup" />
                </children>
             </GridPane>
          </content>
