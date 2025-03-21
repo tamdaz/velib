@@ -73,4 +73,24 @@ public class StationCollection {
         }
         return filteredStation;
     }
+
+
+    /**
+     * Retourne des stations mobiles (plages stations >= 90 000).
+     * 
+     * @return
+     */
+    public static ArrayList<Station> getMobileStations(){
+        ArrayList<Station> filteredStation = new ArrayList<Station>();
+        
+        for (Station station : stations) {
+            int plagesMobile = Integer.parseInt(station.getStationCode().substring(0, 2));
+            
+            if (plagesMobile >= 90) {
+                filteredStation.add(station);
+            }
+        }
+
+        return filteredStation;
+    }
 }
