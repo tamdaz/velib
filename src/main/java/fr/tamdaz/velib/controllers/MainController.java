@@ -154,10 +154,7 @@ public class MainController {
     @FXML
     public void initialize() {
         // Récupérer la valeur des attributs grâce à la clase PropertyValueFactory.
-        // Tant que certains attributs sont de type SimpleStringProperty,
-        // SimpleBooleanProperty
-        // ou SimpleIntegerProperty et que chaque attribut possèdent un getter et un
-        // setter,
+        // Tant que certains attributs possèdent un getter et un setter,
         // les données pourront être affichés sous forme de tableau.
         numberColumn.setCellValueFactory(new PropertyValueFactory<>("stationCode"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));

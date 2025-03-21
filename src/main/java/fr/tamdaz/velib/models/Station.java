@@ -2,9 +2,6 @@ package fr.tamdaz.velib.models;
 
 import java.time.Instant;
 
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleStringProperty;
-
 /**
  * Modèle contenant des informations sur une station.
  */
@@ -12,22 +9,22 @@ public class Station {
     /**
      * Nom de la station.
      */
-    private SimpleStringProperty name;
+    private String name;
 
     /**
      * Numéro de la station.
      */
-    private SimpleStringProperty stationCode;
+    private String stationCode;
 
     /**
      * Statut de la station (opérationnelle ou non).
      */
-    private SimpleBooleanProperty isInstalled;
+    private boolean isInstalled;
 
     /**
      * Statut de la borne de paiement (opérationnelle ou non).
      */
-    private SimpleBooleanProperty isRenting;
+    private boolean isRenting;
 
     /**
      * Informations sur la capacité des vélos que peut avoir une station.
@@ -66,8 +63,8 @@ public class Station {
      * @param stationCode
      */
     public Station(String name, String stationCode) {
-        this.name = new SimpleStringProperty(name);
-        this.stationCode = new SimpleStringProperty(stationCode);
+        this.name = name;
+        this.stationCode = stationCode;
     }
 
     /**
@@ -76,7 +73,7 @@ public class Station {
      * @return
      */
     public String getName() {
-        return this.name.get();
+        return this.name;
     }
 
     /**
@@ -85,7 +82,7 @@ public class Station {
      * @return
      */
     public String getStationCode() {
-        return this.stationCode.get();
+        return this.stationCode;
     }
 
     /**
@@ -94,7 +91,7 @@ public class Station {
      * @return
      */
     public String getIsInstalled() {
-        if (this.isInstalled.get()) {
+        if (this.isInstalled) {
             return "Oui";
         } else {
             return "Non";
@@ -107,7 +104,7 @@ public class Station {
      * @param isInstalled
      */
     public void setIsInstalled(boolean isInstalled) {
-        this.isInstalled = new SimpleBooleanProperty(isInstalled);
+        this.isInstalled = isInstalled;
     }
 
     /**
@@ -116,7 +113,7 @@ public class Station {
      * @return
      */
     public String getIsRenting() {
-        if (this.isRenting.get()) {
+        if (this.isRenting) {
             return "Oui";
         } else {
             return "Non";
@@ -129,7 +126,7 @@ public class Station {
      * @param isRenting
      */
     public void setIsRenting(boolean isRenting) {
-        this.isRenting = new SimpleBooleanProperty(isRenting);
+        this.isRenting = isRenting;
     }
 
     /**
