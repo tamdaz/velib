@@ -5,11 +5,15 @@ import java.time.format.DateTimeFormatter;
 
 import fr.tamdaz.velib.models.Station;
 import fr.tamdaz.velib.models.collection.StationCollection;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TitledPane;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -144,6 +148,24 @@ public class MainController {
     private Text longitudeText;
 
     /**
+     * Contient tous les boutons radio pour la sélection d'un département.
+     */
+    @FXML
+    private ToggleGroup departmentGroup;
+
+    /**
+     * Contient tous les boutons radio pour la sélection d'un arrondissement.
+     */
+    @FXML
+    private ToggleGroup arrondissementsGroup;
+
+    /**
+     * Petite vue représentant les arrondissements à sélectionner.
+     */
+    @FXML
+    private TitledPane arrondissementView;
+
+    /**
      * Une liste de toutes stations.
      */
     private final ObservableList<Station> data = FXCollections.observableArrayList(StationCollection.getStations());
@@ -161,9 +183,41 @@ public class MainController {
         isRentingColumn.setCellValueFactory(new PropertyValueFactory<>("isRenting"));
         isInstalledColumn.setCellValueFactory(new PropertyValueFactory<>("isInstalled"));
 
-        for (Station station : this.data) {
-            this.dataTable.getItems().add(station);
+        this.dataTable.getItems().addAll(this.data);
+    }
+
+    /**
+     * Se déclenche lorsqu'un utilisateur choisit un département.
+     */
+    @FXML
+    public void onSelectedDepartment() {
+        RadioButton selectedRadioButton = (RadioButton) departmentGroup.getSelectedToggle();
+        String departmentValue = selectedRadioButton.getText();
+
+        boolean isParisSelected = departmentValue.equals("75");
+        
+        if (!isParisSelected) {
+            this.arrondissementsGroup.selectToggle(null);
         }
+        
+        this.arrondissementView.setDisable(!isParisSelected);
+
+        this.dataTable.getItems().clear();
+        this.dataTable.getItems().addAll(StationCollection.filterStationByDepartement(departmentValue));
+    }
+
+    /**
+     * Se déclenche lorsqu'un utilisateur choisit un arrondissement.
+     */
+    @FXML
+    public void onSelectedArrondissement() {
+        RadioButton selectedRadioButton = (RadioButton) arrondissementsGroup.getSelectedToggle();
+        String arrondissementValue = selectedRadioButton.getText();
+
+        System.out.println(arrondissementValue);
+
+        this.dataTable.getItems().clear();
+        this.dataTable.getItems().addAll(StationCollection.filterStationByArrondissement(arrondissementValue));
     }
 
     /**
