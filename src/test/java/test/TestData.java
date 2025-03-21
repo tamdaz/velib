@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-public class TestCoordinates {
+public class TestData {
     @Test
     public void testExemple() {
         assertTrue(true);
