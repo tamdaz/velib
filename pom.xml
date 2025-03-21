@@ -65,7 +65,11 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>fr.tamdaz.velib.App</mainClass>
+                            <mainClass>fr.tamdaz.velib.App</mainClass> <!-- Remplace par ton Main -->
+                            <modulePath>/usr/share/openjfx/lib</modulePath>
+                            <options>
+                                <option>--add-modules=javafx.controls,javafx.fxml,javafx.graphics</option>
+                            </options>
                         </configuration>
                     </execution>
                 </executions>
