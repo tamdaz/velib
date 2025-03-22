@@ -214,8 +214,6 @@ public class MainController {
         RadioButton selectedRadioButton = (RadioButton) arrondissementsGroup.getSelectedToggle();
         String arrondissementValue = selectedRadioButton.getText();
 
-        System.out.println(arrondissementValue);
-
         this.dataTable.getItems().clear();
         this.dataTable.getItems().addAll(StationCollection.filterStationByArrondissement(arrondissementValue));
     }
