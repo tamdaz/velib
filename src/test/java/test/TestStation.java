@@ -1,12 +1,15 @@
 package test;
 
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-
 public class TestStation {
-    @Test
-    public void testExemple() {
-        assertTrue(true);
-    }
+    // Créer un attribut Station.
+    
+    // Vérifier qu'on peut créer une instance de type Station.
+
+    // Vérifier que les informations correspondent aux valeurs attendues.
+
+    // Vérifier que les coordonnées peuvent être ajoutées à une station.
+
+    // Vérifier qu'on peut filtrer les stations par arrondissement.
+
+    // Vérifier qu'on peut filtrer les stations par département.
 }

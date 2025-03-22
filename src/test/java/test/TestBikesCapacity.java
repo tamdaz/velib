@@ -1,12 +1,16 @@
 package test;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 
-import org.junit.Test;
+import fr.tamdaz.velib.models.BikesCapacity;
 
 public class TestBikesCapacity {
-    @Test
-    public void testExemple() {
-        assertTrue(true);
+    private BikesCapacity bikesCapacity = new BikesCapacity();
+
+    @Before
+    public void setUp() {
+        // Définir des informations en utilisant des setters dans la classe BikesCapacity.
     }
+
+    // Vérifier que les informations correspondent aux valeurs attendues.
 }
