@@ -1,7 +1,6 @@
 package fr.tamdaz.velib.services;
 
 import java.time.Instant;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,8 +20,8 @@ import fr.tamdaz.velib.models.collection.StationCollection;
  * sur des stations.
  */
 public class Gateway {
-    public void start() throws IOException {
-        String jsonData = this.getFileContent("data.json");
+    public static void start() {
+        String jsonData = Gateway.getFileContent("data.json");
         JSONArray jsonArray = new JSONArray(jsonData);
 
         for (Object json : jsonArray) {
@@ -73,7 +72,7 @@ public class Gateway {
      * @param fileName Nom du fichier.
      * @return
      */
-    private String getFileContent(String fileName) {
+    public static String getFileContent(String fileName) {
         InputStream inputStream = App.class.getResourceAsStream(fileName);
         String output = "";
 
