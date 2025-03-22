@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -9,6 +10,16 @@ import fr.tamdaz.velib.models.Coordinates;
 
 public class TestCoordinates {
     private Coordinates coordinatesAttribute = new Coordinates(2.2784192115068, 48.836395736424);
+
+    /**
+     * Vérifier que la classe Coordinates est bien instancié.
+     */
+    @Test
+    public void testCoordinatesIsCreated() {
+        assertNotNull(this.coordinatesAttribute);
+        assertNotNull(this.coordinatesAttribute.getLatitude());
+        assertNotNull(this.coordinatesAttribute.getLongitude());
+    }
 
     /**
      * Vérifier que les coordonnées sous format décimales correspondent
