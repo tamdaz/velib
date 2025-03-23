@@ -51,7 +51,7 @@ public class MainController {
     private TableColumn<Station, Boolean> isRentingColumn;
 
     /**
-     * Une box verticale qui affiche toutes les informations sur une station.
+     * Une box verticale qui affiche toutes les informations sur la station sélectionné.
      */
     @FXML
     private VBox infoBox;
@@ -199,6 +199,8 @@ public class MainController {
         if (!isParisSelected) {
             this.arrondissementsGroup.selectToggle(null);
         }
+
+        this.infoBox.setVisible(false);
         
         this.arrondissementView.setDisable(!isParisSelected);
 
@@ -214,6 +216,8 @@ public class MainController {
         RadioButton selectedRadioButton = (RadioButton) arrondissementsGroup.getSelectedToggle();
         String arrondissementValue = selectedRadioButton.getText();
 
+        this.infoBox.setVisible(false);
+
         this.dataTable.getItems().clear();
         this.dataTable.getItems().addAll(StationCollection.filterStationByArrondissement(arrondissementValue));
     }
@@ -226,6 +230,7 @@ public class MainController {
         if (!this.dataTable.getSelectionModel().isEmpty()) {
             Station selectedStation = this.dataTable.getSelectionModel().getSelectedItem();
             this.displayAdditionalInformation(selectedStation);
+            this.infoBox.setVisible(true);
         }
     }
 
