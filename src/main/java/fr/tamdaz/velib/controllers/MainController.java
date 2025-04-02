@@ -57,6 +57,12 @@ public class MainController {
     private VBox infoBox;
 
     /**
+     * Texte pour afficher la ville.
+     */
+    @FXML
+    private Text cityText;
+
+    /**
      * Texte pour afficher l'arrondissement.
      */
     @FXML
@@ -274,7 +280,14 @@ public class MainController {
             this.isReturningText.setFill(Color.RED);
         }
 
-        this.arrondissementText.setText("Arrondissment : " + selectedStation.getArrondissementName());
+        this.cityText.setText("Ville : " + selectedStation.getCityName());
+
+        if (selectedStation.getMunicipalityCodeInsee().startsWith("75")) {
+            this.arrondissementText.setText("Arrondissement : " + selectedStation.getArrondissement());
+        } else {
+            this.arrondissementText.setText("----");
+        }
+        
         this.numMecanicBikesText.setText("Nombre de vélos mécaniques : " + selectedStation.getBikesCapacity().getEbike());
 
         DateTimeFormatter formatter = DateTimeFormatter

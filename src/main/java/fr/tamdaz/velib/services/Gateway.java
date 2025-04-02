@@ -59,8 +59,20 @@ public class Gateway {
             Coordinates coordinates = new Coordinates(longitude, latitude);
 
             station.setCoordinates(coordinates);
-            station.setArrondissementName(line.getString("nom_arrondissement_communes"));
+            station.setCityName(line.getString("nom_arrondissement_communes"));
             station.setMunicipalityCodeInsee(line.getString("code_insee_commune"));
+
+            if (station.getMunicipalityCodeInsee().startsWith("75")) {
+                if (station.getStationCode().length() == 5) {
+                    String arrondissement = station.getStationCode().substring(0, 2);
+                    station.setArrondissement(arrondissement);
+                }
+                
+                if (station.getStationCode().length() == 4) {
+                    String arrondissement = station.getStationCode().substring(0, 1);
+                    station.setArrondissement(arrondissement);
+                }
+            }
 
             StationCollection.addStation(station);
         }

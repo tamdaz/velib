@@ -118,7 +118,7 @@
       </TableView>
       <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="&gt; Informations" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
          <content>
-            <VBox fx:id="infoBox" spacing="6.0" visible="false">
+            <VBox fx:id="infoBox" spacing="6.0">
                <children>
                   <GridPane>
                      <columnConstraints>
@@ -145,7 +145,7 @@
                         <Text fx:id="numMecanicBikesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Nb. vélos mécaniques dispo. :" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Text fx:id="isReturningText" strokeType="OUTSIDE" strokeWidth="0.0" text="Peut recevoir des vélos :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <Text fx:id="arrondissementText" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrondissement :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                        <Text fx:id="inseeCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Code INSEE :" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Text fx:id="inseeCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Code INSEE :" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                         <Text fx:id="stationCodeText" strokeType="OUTSIDE" strokeWidth="0.0" text="Station n°----" wrappingWidth="300.0">
                            <font>
                               <Font name="System Bold" size="24.0" />
@@ -160,6 +160,7 @@
                            <font>
                               <Font name="System Italic" size="13.0" />
                            </font></Text>
+                        <Text fx:id="cityText" strokeType="OUTSIDE" strokeWidth="0.0" text="Ville : " GridPane.columnIndex="2" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                   <Text fx:id="dueDateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Date d'actualisation des données  : ">

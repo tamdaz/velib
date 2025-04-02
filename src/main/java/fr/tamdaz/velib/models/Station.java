@@ -49,7 +49,12 @@ public class Station {
     /**
      * Nom de l'arrondissement.
      */
-    private String arrondissementName;
+    private String arrondissement;
+
+    /**
+     * Nom de la ville.
+     */
+    private String cityName;
 
     /**
      * Le code INSEE de la commune.
@@ -212,17 +217,35 @@ public class Station {
      * 
      * @return
      */
-    public String getArrondissementName() {
-        return this.arrondissementName;
+    public String getArrondissement() {
+        return this.arrondissement;
     }
 
     /**
      * Définir le nom de l'arrondissement.
      * 
-     * @param arrondissementName
+     * @param arrondissement
      */
-    public void setArrondissementName(String arrondissementName) {
-        this.arrondissementName = arrondissementName;
+    public void setArrondissement(String arrondissement) {
+        this.arrondissement = arrondissement;
+    }
+
+    /**
+     * Retourne le nom de la ville.
+     * 
+     * @return
+     */
+    public String getCityName() {
+        return cityName;
+    }
+
+    /**
+     * Définir le nom de la ville.
+     * 
+     * @param cityName
+     */
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
     /**
@@ -246,9 +269,9 @@ public class Station {
     /**
      * Effectuer un filtre de l'arrondissement.
      * 
-     * @param arrondissementName
+     * @param arrondissement
      */
-    public void filtreArrondissement(String arrondissementName) {
+    public void filtreArrondissement(String arrondissement) {
         // ...
     }
 }
