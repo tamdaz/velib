@@ -265,13 +265,4 @@ public class Station {
     public void setMunicipalityCodeInsee(String municipalityCodeInsee) {
         this.municipalityCodeInsee = municipalityCodeInsee;
     }
-
-    /**
-     * Effectuer un filtre de l'arrondissement.
-     * 
-     * @param arrondissement
-     */
-    public void filtreArrondissement(String arrondissement) {
-        // ...
-    }
 }
