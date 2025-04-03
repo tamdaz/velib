@@ -29,57 +29,40 @@ public class TestStation {
         station.setCoordinates(coordinates);
     }
 
+    /**
+     * Vérifier que les informations ne sont pas nulles.
+     */
     @Test
     public void testStationInfoIsNotNull() {
         assertNotNull(station);
     }
 
-    // Vérifier que les informations correspondent aux valeurs attendues.
+    /**
+     * Vérifier que les informations correspondent aux valeurs attendues.
+     */
     @Test
-    public void testStationSameDatas(){        
-        assertEquals(
-            station.getName(),
-            "stationTest"
-        );
-        assertEquals(
-            station.getStationCode(),
-            "404"
-        );
-        assertEquals(
-            station.getIsInstalled(),
-            "Non"
-        );
-        assertEquals(
-            station.getIsRenting(),
-            "Non"
-        );
-        assertEquals(
-            station.getIsReturning(),
-            "Non"
-        );
-        assertEquals(
-            station.getArrondissement(),
-            "loin là-bas"
-        );
-        assertEquals(
-            station.getMunicipalityCodeInsee(),
-            "75000"
-        );
+    public void testStationSameDatas() {
+        assertEquals(station.getName(), "stationTest");
+        assertEquals(station.getStationCode(), "404");
+        assertEquals(station.getIsInstalled(), "Non");
+        assertEquals(station.getIsRenting(), "Non");
+        assertEquals(station.getIsReturning(), "Non");
+        assertEquals(station.getArrondissement(), "loin là-bas");
+        assertEquals(station.getMunicipalityCodeInsee(), "75000");
     }
     
-
-    // Vérifier que les coordonnées peuvent être ajoutées à une station.
+    /**
+     * Vérifier que les coordonnées peuvent être ajoutées à une station.
+     */
     @Test
     public void testStationSettingCoordinates() {
-        assertTrue(
-            station.getCoordinates().getLongitude() == 1.5
-        );
-        assertTrue(
-            station.getCoordinates().getLatitude() == 1.6
-        );
+        assertTrue(station.getCoordinates().getLongitude() == 1.5);
+        assertTrue(station.getCoordinates().getLatitude() == 1.6);
     }
 
-    // Vérifier qu'on peut filtrer les stations par arrondissement (du 1er au 20ème).
+    /**
+     * Vérifier qu'on peut filtrer les stations par arrondissement.
+     */
     @Test
     public void testStationFilteredArrondissement() {
         ArrayList<Station> filteredStationsArr1 = StationCollection.filterStationByArrondissement("1");
@@ -141,10 +124,11 @@ public class TestStation {
 
         ArrayList<Station> filteredStationsArr20 = StationCollection.filterStationByArrondissement("20");
         assertEquals(65, filteredStationsArr20.size());
-
     }
 
-    // Vérifier qu'on peut filtrer les stations par département.
+    /**
+     * Vérifier qu'on peut filtrer les stations par département.
+     */
     @Test
     public void testStationFilteredDepartement() {
         ArrayList<Station> filteredStationsDpt75 = StationCollection.filterStationByDepartement("75");

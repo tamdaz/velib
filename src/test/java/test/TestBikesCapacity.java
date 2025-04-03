@@ -10,9 +10,6 @@ import org.junit.Test;
 import fr.tamdaz.velib.models.BikesCapacity;
 
 public class TestBikesCapacity {
-    /**
-     * Attribut pour tester cette classe.
-     */
     private BikesCapacity bikesCapacity = new BikesCapacity();
 
     /**
@@ -28,8 +25,7 @@ public class TestBikesCapacity {
     }
 
     /**
-     * Vérifie que le nombre de vélos est égal à la somme
-     * des vélos électriques et des vélos mécaniques
+     * Vérifie que le nombre de vélos est égal à la somme des vélos électriques et mécaniques.
      */
     @Test
     public void testBikesCapacityIsCreated() {
