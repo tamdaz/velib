@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.tamdaz.velib.controllers.MainController">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.tamdaz.velib.controllers.MainController">
    <columnConstraints>
       <ColumnConstraints maxWidth="484.0" minWidth="251.0" prefWidth="328.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="428.0" />
@@ -98,9 +98,9 @@
       </TitledPane>
       <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Autres paramètres" GridPane.columnIndex="2">
          <content>
-            <RadioButton mnemonicParsing="false" text="Mobiles">
+            <RadioButton mnemonicParsing="false" onAction="#onSelectedMobile" text="Mobiles">
                <toggleGroup>
-                  <ToggleGroup fx:id="OtherParamGroup" />
+                  <ToggleGroup fx:id="otherParamGroup" />
                </toggleGroup>
             </RadioButton>
          </content>

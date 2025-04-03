@@ -166,6 +166,12 @@ public class MainController {
     private ToggleGroup arrondissementsGroup;
 
     /**
+     * Contient tous les boutons radio pour sélectionner les stations mobiles.
+     */
+    @FXML
+    private ToggleGroup otherParamGroup;
+
+    /**
      * Petite vue représentant les arrondissements à sélectionner.
      */
     @FXML
@@ -212,6 +218,8 @@ public class MainController {
 
         this.dataTable.getItems().clear();
         this.dataTable.getItems().addAll(StationCollection.filterStationByDepartement(departmentValue));
+
+        this.otherParamGroup.selectToggle(null);
     }
 
     /**
@@ -226,6 +234,8 @@ public class MainController {
 
         this.dataTable.getItems().clear();
         this.dataTable.getItems().addAll(StationCollection.filterStationByArrondissement(arrondissementValue));
+        
+        this.otherParamGroup.selectToggle(null);
     }
 
     /**
@@ -238,6 +248,23 @@ public class MainController {
             this.displayAdditionalInformation(selectedStation);
             this.infoBox.setVisible(true);
         }
+    }
+
+    /**
+     * Se déclenche lorsqu'un utilisateur choisit le filtre des stations mobiles.
+     */
+    public void onSelectedMobile() {
+        this.infoBox.setVisible(false);
+
+        this.dataTable.getItems().clear();
+        this.dataTable.getItems().addAll(StationCollection.filterStationByMobile());
+
+        /**
+         * Dès lors que le bouton Mobiles est sélectionné,
+         * on désactive les boutons départements et arrondissements.
+        */
+        this.departmentGroup.selectToggle(null);
+        this.arrondissementsGroup.selectToggle(null);
     }
 
     /**

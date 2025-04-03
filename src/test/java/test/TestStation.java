@@ -41,7 +41,7 @@ public class TestStation {
      * Vérifier que les informations correspondent aux valeurs attendues.
      */
     @Test
-    public void testStationSameDatas(){        
+    public void testStationSameDatas() {
         assertEquals(station.getName(), "stationTest");
         assertEquals(station.getStationCode(), "404");
         assertEquals(station.getIsInstalled(), "Non");
@@ -145,5 +145,12 @@ public class TestStation {
 
         ArrayList<Station> filteredStationsDpt95 = StationCollection.filterStationByDepartement("95");
         assertEquals(7, filteredStationsDpt95.size());
+    }
+
+    // Vérifier qu'on peut filtrer les stations par stations mobiles.
+    @Test
+    public void testStationFilteredMobile() {
+        ArrayList<Station> filteredStationMobile = StationCollection.filterStationByMobile();
+        assertEquals(8 , filteredStationMobile.size());
     }
 }
