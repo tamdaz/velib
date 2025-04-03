@@ -9,6 +9,7 @@ import fr.tamdaz.velib.models.collection.StationCollection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -181,6 +182,24 @@ public class MainController {
      * Une liste de toutes stations.
      */
     private final ObservableList<Station> data = FXCollections.observableArrayList(StationCollection.getStations());
+
+    /**
+     * Fermer le programme
+     */
+    @FXML
+    private void closeProgram() {
+        System.exit(0);
+    }
+
+    /**
+     * Références de l'application / à propos
+     */
+    @FXML
+    private void refProgram(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("à propos");
+        alert.setHeaderText("Informations");
+    }
 
     /**
      * Une fois que la vue et le controller se délenche.
