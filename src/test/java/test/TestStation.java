@@ -24,7 +24,7 @@ public class TestStation {
         station.setIsInstalled(false);
         station.setIsRenting(false);
         station.setIsReturning(false);
-        station.setArrondissementName("loin là-bas");
+        station.setArrondissement("loin là-bas");
         station.setMunicipalityCodeInsee("75000");
         station.setCoordinates(coordinates);
     }
@@ -58,7 +58,7 @@ public class TestStation {
             "Non"
         );
         assertEquals(
-            station.getArrondissementName(),
+            station.getArrondissement(),
             "loin là-bas"
         );
         assertEquals(
@@ -79,7 +79,7 @@ public class TestStation {
         );
     }
 
-    // Vérifier qu'on peut filtrer les stations par arrondissement.
+    // Vérifier qu'on peut filtrer les stations par arrondissement (du 1er au 20ème).
     @Test
     public void testStationFilteredArrondissement() {
         ArrayList<Station> filteredStationsArr1 = StationCollection.filterStationByArrondissement("1");
@@ -161,5 +161,11 @@ public class TestStation {
 
         ArrayList<Station> filteredStationsDpt95 = StationCollection.filterStationByDepartement("95");
         assertEquals(7, filteredStationsDpt95.size());
+    }
+
+    // Vérifier qu'on peut filtrer les stations par stations mobiles.
+    @Test
+    public void testStationFilteredMobile() {
+        // ...
     }
 }
