@@ -38,13 +38,14 @@ public class TestCoordinates {
     @Test
     public void testCoordinatesCanBeConvertedToHoursMinutesSeconds() {
         assertEquals(
-            this.coordinatesAttribute.getLitteralLongitude(),
-            "2° 16' 42,31\""
+            "2° 16' 42,31\"",
+            this.coordinatesAttribute.getLitteralLongitude()
+            
         );
 
         assertEquals(
-            this.coordinatesAttribute.getLitteralLattitude(),
-            "48° 50' 11,02\""
+            "48° 50' 11,02\"",
+            this.coordinatesAttribute.getLitteralLattitude()
         );
     }
 }

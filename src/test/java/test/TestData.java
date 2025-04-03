@@ -21,20 +21,22 @@ public class TestData {
         nbTotalStations = jsonArray.length();
     }
 
+    /**
+     * Vérifier que le fichier "data.json" ne contient pas de données vides.
+     */
     @Test
     public void testDataJSONIsNotNull() {
         String jsonContent = Gateway.getFileContent("data.json");
         assertNotNull(jsonContent);
     }
 
+    /**
+     * Vérifier que l'ensemble des stations sont enregistrées dans la collection
+     * StationCollection.
+     */
     @Test
     public void testStationCollection() {
         int tailleListe = StationCollection.getStations().size();
-        assertEquals(
-            nbTotalStations, 
-            tailleListe);
-
-        System.out.println("premier : " + tailleListe);
-        System.out.println("second : " + nbTotalStations);
+        assertEquals(nbTotalStations, tailleListe);
     }
 }
