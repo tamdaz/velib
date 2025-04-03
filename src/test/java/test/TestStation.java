@@ -166,6 +166,7 @@ public class TestStation {
     // Vérifier qu'on peut filtrer les stations par stations mobiles.
     @Test
     public void testStationFilteredMobile() {
-        // ...
+        ArrayList<Station> filteredStationMobile = StationCollection.filterStationByMobile();
+        assertEquals(8 , filteredStationMobile.size());
     }
 }
