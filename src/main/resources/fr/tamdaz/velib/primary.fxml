@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -19,12 +22,13 @@
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="141.0" prefWidth="244.0" />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
       <RowConstraints minHeight="150.0" prefHeight="150.0" vgrow="ALWAYS" />
       <RowConstraints minHeight="200.0" prefHeight="200.0" vgrow="ALWAYS" />
       <RowConstraints maxHeight="382.0000061035156" minHeight="252.39999999999998" prefHeight="358.8000244140625" vgrow="ALWAYS" />
    </rowConstraints>
    <children>
-      <TitledPane fx:id="arrondissementView" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Arrondissements">
+      <TitledPane fx:id="arrondissementView" animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Arrondissements" GridPane.rowIndex="1">
          <content>
             <GridPane alignment="CENTER">
                <columnConstraints>
@@ -69,7 +73,7 @@
             </GridPane>
          </content>
       </TitledPane>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Départements (Hors-Paris)" GridPane.columnIndex="1">
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Départements (Hors-Paris)" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <content>
             <GridPane>
                <columnConstraints>
@@ -96,7 +100,7 @@
             </GridPane>
          </content>
       </TitledPane>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Autres paramètres" GridPane.columnIndex="2">
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="&gt; Autres paramètres" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <content>
             <RadioButton mnemonicParsing="false" onAction="#onSelectedMobile" text="Mobiles">
                <toggleGroup>
@@ -105,7 +109,7 @@
             </RadioButton>
          </content>
       </TitledPane>
-      <TableView fx:id="dataTable" onKeyPressed="#onSelectedStation" onMouseClicked="#onSelectedStation" prefWidth="1000.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
+      <TableView fx:id="dataTable" onKeyPressed="#onSelectedStation" onMouseClicked="#onSelectedStation" prefWidth="1000.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" GridPane.rowSpan="2147483647">
          <columns>
             <TableColumn fx:id="numberColumn" maxWidth="125.0" minWidth="100.0" prefWidth="125.0" text="Numéro" />
             <TableColumn fx:id="nameColumn" maxWidth="3000.0" minWidth="100.0" prefWidth="500.0" text="Nom" />
@@ -116,7 +120,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="&gt; Informations" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="&gt; Informations" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
          <content>
             <VBox fx:id="infoBox" spacing="6.0">
                <children>
@@ -172,5 +176,19 @@
             </VBox>
          </content>
       </TitledPane>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#closeProgram" text="Fermer l'application" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aide">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#refProgram" text="À propos" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </GridPane>
