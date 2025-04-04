@@ -275,6 +275,7 @@ public class MainController {
     /**
      * Se déclenche lorsqu'un utilisateur choisit le filtre des stations mobiles.
      */
+    @FXML
     public void onSelectedMobile() {
         this.infoBox.setVisible(false);
 
@@ -294,6 +295,7 @@ public class MainController {
      * 
      * @param selectedStation
      */
+    @FXML
     private void displayAdditionalInformation(Station selectedStation) {
         this.stationCodeText.setText("Station n°" + selectedStation.getStationCode());
 
