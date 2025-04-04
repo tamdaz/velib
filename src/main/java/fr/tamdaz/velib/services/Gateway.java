@@ -82,7 +82,7 @@ public class Gateway {
      * Permet de lire le contenu du fichier dans une ressource.
      * 
      * @param fileName Nom du fichier.
-     * @return
+     * @return Contenu du fichier.
      */
     public static String getFileContent(String fileName) {
         InputStream inputStream = App.class.getResourceAsStream(fileName);
