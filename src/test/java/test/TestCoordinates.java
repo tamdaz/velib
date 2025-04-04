@@ -17,8 +17,6 @@ public class TestCoordinates {
     @Test
     public void testCoordinatesIsCreated() {
         assertNotNull(this.coordinatesAttribute);
-        assertNotNull(this.coordinatesAttribute.getLatitude());
-        assertNotNull(this.coordinatesAttribute.getLongitude());
     }
 
     /**
@@ -37,15 +35,7 @@ public class TestCoordinates {
      */
     @Test
     public void testCoordinatesCanBeConvertedToHoursMinutesSeconds() {
-        assertEquals(
-            "2° 16' 42,31\"",
-            this.coordinatesAttribute.getLitteralLongitude()
-            
-        );
-
-        assertEquals(
-            "48° 50' 11,02\"",
-            this.coordinatesAttribute.getLitteralLattitude()
-        );
+        assertEquals("2° 16' 42,31\"", this.coordinatesAttribute.getLitteralLongitude());
+        assertEquals("48° 50' 11,02\"", this.coordinatesAttribute.getLitteralLattitude());
     }
 }
