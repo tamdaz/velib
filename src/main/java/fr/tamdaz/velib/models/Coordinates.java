@@ -4,7 +4,14 @@ package fr.tamdaz.velib.models;
  * Coordonnées géographiques qui peuvent être utilisés pour des stations.
  */
 public class Coordinates {
+    /**
+     * Longitude de la position de la station.
+     */
     private final double longitude;
+
+    /**
+     * Lattiude de la position de la station.
+     */
     private final double latitude;
 
     /**

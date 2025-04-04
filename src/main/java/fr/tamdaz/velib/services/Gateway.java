@@ -60,9 +60,9 @@ public class Gateway {
 
             station.setCoordinates(coordinates);
             station.setCityName(line.getString("nom_arrondissement_communes"));
-            station.setMunicipalityCodeInsee(line.getString("code_insee_commune"));
+            station.setInseeCode(line.getString("code_insee_commune"));
 
-            if (station.getMunicipalityCodeInsee().startsWith("75")) {
+            if (station.getInseeCode().startsWith("75")) {
                 if (station.getStationCode().length() == 5) {
                     String arrondissement = station.getStationCode().substring(0, 2);
                     station.setArrondissement(arrondissement);

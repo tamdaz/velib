@@ -179,7 +179,7 @@ public class MainController {
     private TitledPane arrondissementView;
 
     /**
-     * Une liste de toutes stations.
+     * Une liste de toutes les stations.
      */
     private final ObservableList<Station> data = FXCollections.observableArrayList(StationCollection.getStations());
 
@@ -205,7 +205,7 @@ public class MainController {
     }
 
     /**
-     * Une fois que la vue et le controller se délenche.
+     * Une fois que la vue et le controller se délenche...
      */
     @FXML
     public void initialize() {
@@ -301,7 +301,7 @@ public class MainController {
         this.capacityText.setText("Capacité : " + selectedStation.getBikesCapacity().getCapacity());
         this.numBikesText.setText("Nombre de vélos disponibles : " + selectedStation.getBikesCapacity().getNumberBikesAvailable());
         this.numDocksText.setText("Nombre de bornettes disponibles : " + selectedStation.getBikesCapacity().getEbike());
-        this.inseeCodeText.setText("Code INSEE : " + selectedStation.getMunicipalityCodeInsee());
+        this.inseeCodeText.setText("Code INSEE : " + selectedStation.getInseeCode());
 
         if (selectedStation.getIsRenting().equals("Oui")) {
             this.isRentingText.setText("Borne de paiement : Disponible");
@@ -331,7 +331,7 @@ public class MainController {
 
         this.cityText.setText("Ville : " + selectedStation.getCityName());
 
-        if (selectedStation.getMunicipalityCodeInsee().startsWith("75")) {
+        if (selectedStation.getInseeCode().startsWith("75")) {
             this.arrondissementText.setText("Arrondissement : " + selectedStation.getArrondissement());
         } else {
             this.arrondissementText.setText("----");

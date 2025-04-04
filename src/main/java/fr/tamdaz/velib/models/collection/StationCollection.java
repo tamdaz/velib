@@ -41,7 +41,7 @@ public class StationCollection {
         ArrayList<Station> filteredStation = new ArrayList<Station>();
 
         for (Station station : stations) {
-            if (station.getMunicipalityCodeInsee().startsWith("75")) {
+            if (station.getInseeCode().startsWith("75")) {
                 if (station.getStationCode().length() == 5) {
                     String arrondissement = station.getStationCode().substring(0, 2);
 
@@ -72,7 +72,7 @@ public class StationCollection {
         ArrayList<Station> filteredStation = new ArrayList<Station>();
 
         for (Station station : stations) {
-            if (station.getMunicipalityCodeInsee().startsWith(numDepartement)) {
+            if (station.getInseeCode().startsWith(numDepartement)) {
                 filteredStation.add(station);
             }
         }

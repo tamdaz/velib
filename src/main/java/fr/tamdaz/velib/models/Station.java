@@ -59,7 +59,7 @@ public class Station {
     /**
      * Le code INSEE de la commune.
      */
-    private String municipalityCodeInsee;
+    private String inseeCode;
 
     /**
      * Passer le nom et le code de la station en paramètre.
@@ -96,11 +96,7 @@ public class Station {
      * @return
      */
     public String getIsInstalled() {
-        if (this.isInstalled) {
-            return "Oui";
-        } else {
-            return "Non";
-        }
+        return this.isInstalled ? "Oui" : "Non";
     }
 
     /**
@@ -118,11 +114,7 @@ public class Station {
      * @return
      */
     public String getIsRenting() {
-        if (this.isRenting) {
-            return "Oui";
-        } else {
-            return "Non";
-        }
+        return this.isRenting ? "Oui" : "Non";
     }
 
     /**
@@ -160,11 +152,7 @@ public class Station {
      * @return
      */
     public String getIsReturning() {
-        if (this.isReturning) {
-            return "Oui";
-        } else {
-            return "Non";
-        }
+        return this.isReturning ? "Oui" : "Non";
     }
 
     /**
@@ -253,8 +241,8 @@ public class Station {
      * 
      * @return
      */
-    public String getMunicipalityCodeInsee() {
-        return this.municipalityCodeInsee;
+    public String getInseeCode() {
+        return this.inseeCode;
     }
 
     /**
@@ -262,7 +250,7 @@ public class Station {
      * 
      * @param municipalityCodeInsee
      */
-    public void setMunicipalityCodeInsee(String municipalityCodeInsee) {
-        this.municipalityCodeInsee = municipalityCodeInsee;
+    public void setInseeCode(String municipalityCodeInsee) {
+        this.inseeCode = municipalityCodeInsee;
     }
 }

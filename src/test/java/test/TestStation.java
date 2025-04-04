@@ -25,7 +25,7 @@ public class TestStation {
         station.setIsRenting(false);
         station.setIsReturning(false);
         station.setArrondissement("loin là-bas");
-        station.setMunicipalityCodeInsee("75000");
+        station.setInseeCode("75000");
         station.setCoordinates(coordinates);
     }
 
@@ -48,7 +48,7 @@ public class TestStation {
         assertEquals(station.getIsRenting(), "Non");
         assertEquals(station.getIsReturning(), "Non");
         assertEquals(station.getArrondissement(), "loin là-bas");
-        assertEquals(station.getMunicipalityCodeInsee(), "75000");
+        assertEquals(station.getInseeCode(), "75000");
     }
     
     /**
