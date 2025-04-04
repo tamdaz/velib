@@ -197,8 +197,11 @@ public class MainController {
     @FXML
     private void refProgram(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("à propos");
-        alert.setHeaderText("Informations");
+        alert.setTitle("À propos");
+        alert.setHeaderText("Projets Velib'");
+        alert.setContentText("Développés par Zohir TAMDA & Jacky HUYNH.");
+
+        alert.showAndWait();
     }
 
     /**
