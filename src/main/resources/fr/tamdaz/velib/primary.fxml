@@ -176,7 +176,7 @@
             </VBox>
          </content>
       </TitledPane>
-      <MenuBar>
+      <MenuBar prefHeight="26.0" prefWidth="889.0" GridPane.columnSpan="2147483647">
         <menus>
           <Menu mnemonicParsing="false" text="Fichier">
             <items>
