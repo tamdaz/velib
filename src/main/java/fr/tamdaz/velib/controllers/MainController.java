@@ -239,7 +239,7 @@ public class MainController {
         this.arrondissementView.setDisable(!isParisSelected);
 
         this.dataTable.getItems().clear();
-        this.dataTable.getItems().addAll(StationCollection.filterStationByDepartement(departmentValue));
+        this.dataTable.getItems().addAll(StationCollection.filterStationByDepartment(departmentValue));
 
         this.otherParamGroup.selectToggle(null);
     }

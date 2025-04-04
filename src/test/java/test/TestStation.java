@@ -146,19 +146,19 @@ public class TestStation {
      */
     @Test
     public void testStationFilteredDepartement() {
-        ArrayList<Station> filteredStationsDpt75 = StationCollection.filterStationByDepartement("75");
+        ArrayList<Station> filteredStationsDpt75 = StationCollection.filterStationByDepartment("75");
         assertEquals(981, filteredStationsDpt75.size());
 
-        ArrayList<Station> filteredStationsDpt92 = StationCollection.filterStationByDepartement("92");
+        ArrayList<Station> filteredStationsDpt92 = StationCollection.filterStationByDepartment("92");
         assertEquals(232, filteredStationsDpt92.size());
        
-        ArrayList<Station> filteredStationsDpt93 = StationCollection.filterStationByDepartement("93");
+        ArrayList<Station> filteredStationsDpt93 = StationCollection.filterStationByDepartment("93");
         assertEquals(115, filteredStationsDpt93.size());
 
-        ArrayList<Station> filteredStationsDpt94 = StationCollection.filterStationByDepartement("94");
+        ArrayList<Station> filteredStationsDpt94 = StationCollection.filterStationByDepartment("94");
         assertEquals(136, filteredStationsDpt94.size());
 
-        ArrayList<Station> filteredStationsDpt95 = StationCollection.filterStationByDepartement("95");
+        ArrayList<Station> filteredStationsDpt95 = StationCollection.filterStationByDepartment("95");
         assertEquals(7, filteredStationsDpt95.size());
     }
 

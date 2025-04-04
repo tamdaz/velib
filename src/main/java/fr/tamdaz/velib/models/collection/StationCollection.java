@@ -68,7 +68,7 @@ public class StationCollection {
      * 
      * @return
      */
-    public static ArrayList<Station> filterStationByDepartement(String numDepartement) {
+    public static ArrayList<Station> filterStationByDepartment(String numDepartement) {
         ArrayList<Station> filteredStation = new ArrayList<Station>();
 
         for (Station station : stations) {
