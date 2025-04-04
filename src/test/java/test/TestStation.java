@@ -6,16 +6,21 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import fr.tamdaz.velib.models.Coordinates;
 import fr.tamdaz.velib.models.Station;
 import fr.tamdaz.velib.models.collection.StationCollection;
+import fr.tamdaz.velib.services.Gateway;
 
 public class TestStation {
     private static Station station;
 
+    /**
+     * Mise en palce avant le test de la classe TestStation.
+     */
     @BeforeClass
     public static void setUp() {
         station = new Station("stationTest", "404");
@@ -27,6 +32,16 @@ public class TestStation {
         station.setArrondissement("loin là-bas");
         station.setInseeCode("75000");
         station.setCoordinates(coordinates);
+
+        Gateway.start();
+    }
+
+    /**
+     * Nettoyer la collection de stations une fois cette classe testée.
+     */
+    @AfterClass
+    public static void tearDown() {
+        StationCollection.getStations().clear();
     }
 
     /**
@@ -147,7 +162,9 @@ public class TestStation {
         assertEquals(7, filteredStationsDpt95.size());
     }
 
-    // Vérifier qu'on peut filtrer les stations par stations mobiles.
+    /**
+     * Vérifier qu'on peut filtrer les stations par stations mobiles.
+     */
     @Test
     public void testStationFilteredMobile() {
         ArrayList<Station> filteredStationMobile = StationCollection.filterStationByMobile();

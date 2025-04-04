@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.json.JSONArray;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -13,12 +14,23 @@ import fr.tamdaz.velib.services.Gateway;
 public class TestData {
     private static int nbTotalStations;
 
+    /**
+     * Mise en place avant le test de la classe TestData
+     */
     @BeforeClass
     public static void setUp() {
         Gateway.start();
         String jsonContent = Gateway.getFileContent("data.json");
         JSONArray jsonArray = new JSONArray(jsonContent);
         nbTotalStations = jsonArray.length();
+    }
+
+    /**
+     * Nettoyer la collection de stations une fois cette classe testée.
+     */
+    @AfterClass
+    public static void tearDown() {
+        StationCollection.getStations().clear();
     }
 
     /**
