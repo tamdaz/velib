@@ -224,7 +224,7 @@ public class Station {
      * @return
      */
     public String getCityName() {
-        return cityName;
+        return this.cityName;
     }
 
     /**
