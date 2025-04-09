@@ -350,6 +350,6 @@ public class MainController {
         this.dueDateText.setText("Date d'actualisation des données : " + dueDateString);
 
         this.longitudeText.setText(selectedStation.getCoordinates().getLitteralLongitude());
-        this.latitudeText.setText(selectedStation.getCoordinates().getLitteralLattitude());
+        this.latitudeText.setText(selectedStation.getCoordinates().getLitteralLatitude());
     }
 }

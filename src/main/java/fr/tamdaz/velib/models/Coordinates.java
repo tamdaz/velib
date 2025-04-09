@@ -64,7 +64,7 @@ public class Coordinates {
      * 
      * @return
      */
-    public String getLitteralLattitude() {
+    public String getLitteralLatitude() {
         int hours = (int) this.latitude;
 
         double tmpMinutes = (this.latitude - hours) * 60;
