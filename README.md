@@ -15,7 +15,7 @@ Cette application est entièrement codé sous le langage Java avec des biblioth�
 - JavaFX (pour créer une application graphique)
 - JSON (pour parser facilement les données sous format JSON)
 
-De plus, l'API d'Open Data de Paris est utilisée pour cette application. Le fichier JSON est stocké dans ce projet pour rendre ces données intègre.
+De plus, l'API d'Open Data de Paris est utilisée pour cette application. Le fichier JSON est stocké dans ce projet pour rendre ces données intègres.
 
 ## Aperçu
 
