@@ -1,7 +1,7 @@
 # Projet Vélib
 
 > [!NOTE]
-> Il s'agit d'un projet de formation. / this is a training project.
+> Il s'agit d'un projet de formation / This is a training project.
 
 <div style="text-align: center;">
     <img src="img/velib_logo.svg" width="150px" />
